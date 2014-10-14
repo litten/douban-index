@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "豆瓣首页",
+  "description": "展示豆瓣默认首页",
+  "version": "1.0",
+  "icons": {
+    "16": "icon/16.png"
+  },
+  "browser_action": {
+    "default_icon": "icon/16.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [ {
+    "js": ["content.js"],
+    "matches": [ "*://*/*", "file:///*" ]
+  } ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+		"<all_urls>",
+		"tabs",
+		"cookies",
+		"webRequest",
+		"webRequestBlocking",
+		"management"
+  ]
+}
